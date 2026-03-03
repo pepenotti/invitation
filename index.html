@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación a Fiesta de Cumpleaños</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="invitation-card">
+            <div class="header">
+                <h1>🎉 ¡Estás Invitado! 🎉</h1>
+                <h2 id="birthday-child-name">Celebración de Cumpleaños</h2>
+                <div class="party-details">
+                    <p><strong>📅 Fecha:</strong> <span id="party-date">Sábado 15 de Marzo, 2026</span></p>
+                    <p><strong>🕐 Horario:</strong> <span id="party-time">15:00 - 18:00</span></p>
+                    <p><strong>📍 Lugar:</strong> <span id="party-location">Nuestra Casa</span></p>
+                </div>
+            </div>
+
+            <div class="rsvp-section">
+                <h3>Por favor confirma tu asistencia</h3>
+                <p class="subtitle">¡Nos encantaría que nos acompañes! Por favor proporciona los nombres de todos los asistentes.</p>
+                
+                <form id="rsvp-form">
+                    <div class="form-group">
+                        <label for="group-name">Nombre de la Familia/Grupo *</label>
+                        <input type="text" id="group-name" required placeholder="ej: Familia García">
+                    </div>
+
+                    <div class="attendees-section">
+                        <h4>Asistentes</h4>
+                        <p class="help-text">Por favor agrega el nombre completo de cada persona que asistirá (adultos y niños)</p>
+                        
+                        <div id="attendees-list">
+                            <div class="attendee-row">
+                                <input type="text" class="attendee-name" placeholder="Nombre Completo" required>
+                                <select class="attendee-type">
+                                    <option value="adult">Adulto</option>
+                                    <option value="child">Niño/a</option>
+                                </select>
+                                <button type="button" class="remove-btn" onclick="removeAttendee(this)" disabled>✕</button>
+                            </div>
+                        </div>
+                        
+                        <button type="button" class="add-btn" onclick="addAttendee()">+ Agregar Otra Persona</button>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email (opcional)</label>
+                        <input type="email" id="email" placeholder="tu.email@ejemplo.com">
+                        <small>Te enviaremos una confirmación</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Notas Especiales (opcional)</label>
+                        <textarea id="notes" rows="3" placeholder="Restricciones alimentarias, alergias o cualquier otra información..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">✓ Confirmar Asistencia</button>
+                </form>
+
+                <div id="success-message" class="success-message" style="display: none;">
+                    <h3>✓ ¡Gracias!</h3>
+                    <p>Tu confirmación ha sido recibida. ¡Esperamos verte pronto!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
